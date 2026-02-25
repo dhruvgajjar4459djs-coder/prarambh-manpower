@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prarambh Manpower Support | Industrial Workforce & Payroll Experts</title>
+    <style>
+        :root {
+            --primary: #6665fe;
+            --accent: #fe6702;
+            --dark: #1a1a1a;
+            --light-bg: #f4f7ff;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; scroll-behavior: smooth; }
+        body { line-height: 1.8; color: #333; background-color: var(--white); }
+
+        /* Navigation */
+        nav { background: var(--white); padding: 10px 8%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(102, 101, 254, 0.1); }
+        .logo-area { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { height: 60px; margin-right: 15px; }
+        .logo-text h1 { font-size: 1.5rem; color: var(--primary); letter-spacing: 1px; line-height: 1; margin: 0; }
+        .logo-text span { font-size: 0.8rem; color: var(--accent); text-transform: uppercase; font-weight: 800; letter-spacing: 2px; }
+
+        .nav-links { list-style: none; display: flex; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        #home { height: 95vh; background: linear-gradient(rgba(102, 101, 254, 0.8), rgba(26, 26, 26, 0.7)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1470&auto=format&fit=crop'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white; text-align: center; padding: 0 10%; }
+        .hero-content h2 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px; text-transform: uppercase; }
+        .hero-content p { font-size: 1.5rem; max-width: 850px; margin: 0 auto 40px; font-weight: 300; }
+        .btn-main { background: var(--accent); color: white; padding: 20px 50px; text-decoration: none; border-radius: 5px; font-weight: 800; font-size: 1.1rem; transition: 0.3s; box-shadow: 0 10px 20px rgba(254, 103, 2, 0.4); border: none; cursor: pointer; display: inline-block; }
+        .btn-main:hover { background: #e05e00; transform: translateY(-3px); }
+
+        /* General Section Styling */
+        section { padding: 120px 10%; }
+        .tagline { color: var(--accent); font-weight: 900; text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem; display: block; margin-bottom: 15px; }
+        .section-title { font-size: 3rem; color: var(--primary); margin-bottom: 40px; line-height: 1.2; }
+
+        /* Detailed Services */
+        #services { background: var(--light-bg); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; }
+        .service-card { background: var(--white); padding: 50px; border-radius: 20px; box-shadow: 0 15px 45px rgba(0,0,0,0.05); border-left: 8px solid var(--primary); transition: 0.4s; }
+        .service-card:hover { transform: translateY(-10px); border-left-color: var(--accent); }
+        .service-card h3 { color: var(--primary); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .service-card p { margin-bottom: 25px; color: #666; font-size: 1.05rem; }
+        .feature-list { list-style: none; }
+        .feature-list li { padding-left: 30px; position: relative; margin-bottom: 15px; font-weight: 600; color: #444; }
+        .feature-list li::before { content: '◈'; position: absolute; left: 0; color: var(--accent); font-size: 1.2rem; }
+
+        /* Payroll Feature */
+        .payroll-section { background: var(--dark); color: var(--white); border-radius: 40px; padding: 100px 8%; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 100px; }
+        .payroll-text h2 { font-size: 2.8rem; color: var(--accent); margin-bottom: 25px; }
+        .payroll-text p { font-size: 1.2rem; opacity: 0.8; margin-bottom: 30px; }
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .stat-item { background: rgba(102, 101, 254, 0.2); padding: 30px; border-radius: 15px; text-align: center; border: 1px solid var(--primary); }
+        .stat-item h4 { font-size: 2.5rem; color: var(--white); }
+        .stat-item p { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin: 0; opacity: 1; }
+
+        /* Contact Details */
+        .contact-container { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; }
+        .contact-sidebar { background: var(--primary); color: var(--white); padding: 60px; border-radius: 25px; }
+        .contact-sidebar h3 { font-size: 2.2rem; margin-bottom: 40px; color: var(--accent); }
+        .contact-info-block { margin-bottom: 35px; }
+        .contact-info-block label { display: block; text-transform: uppercase; font-size: 0.8rem; font-weight: 800; margin-bottom: 10px; color: rgba(255,255,255,0.6); }
+        .contact-info-block p { font-size: 1.2rem; font-weight: 500; }
+
+        .form-input { width: 100%; padding: 20px; margin-bottom: 25px; border: 1px solid #ddd; border-radius: 10px; font-size: 1rem; transition: 0.3s; }
+        .form-input:focus { border-color: var(--primary); outline: none; box-shadow: 0 0 10px rgba(102,101,254,0.1); }
+        .submit-button { background: var(--primary); color: white; width: 100%; padding: 20px; border: none; border-radius: 10px; font-weight: 800; font-size: 1.2rem; cursor: pointer; transition: 0.3s; }
+        .submit-button:hover { background: var(--accent); }
+
+        footer { background: #0a0a0a; color: #777; padding: 80px 10%; text-align: center; border-top: 1px solid #222; }
+        .wa-float { position: fixed; bottom: 40px; right: 40px; background: #25d366; width: 75px; height: 75px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 30px rgba(0,0,0,0.3); z-index: 2000; transition: 0.3s; }
+        .wa-float:hover { transform: scale(1.1); }
+
+        @media (max-width: 1100px) {
+            .services-grid, .payroll-section, .contact-container { grid-template-columns: 1fr; }
+            .hero-content h2 { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#home" class="logo-area">
+            <img src="001.png" alt="Prarambh Logo" class="logo-img">
+            <div class="logo-text">
+                <h1>PRARAMBH</h1>
+                <span>Manpower Support</span>
+            </div>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="hero-content">
+            <span class="tagline" style="color: white; border: 1px solid var(--accent); display: inline-block; padding: 8px 25px; border-radius: 50px; margin-bottom: 30px;">Established 2015</span>
+            <h2>NATIONWIDE LEADERS IN<br>MANPOWER EXCELLENCE</h2>
+            <p>Your one-stop solution for trusted, high-performance industrial workforce and comprehensive third-party payroll management.</p>
+            <a href="#contact" class="btn-main">Request a Site Proposal</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+            <div class="about-text">
+                <span class="tagline">Our Heritage</span>
+                <h2 class="section-title">Trusted Partner for Manufacturing Units</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 25px;"><strong>Prarambh Manpower Support</strong> was founded in 2015 with a clear mission: to bridge the gap between complex industrial needs and high-quality human talent[cite: 34, 55].</p>
+                <p>As a dynamic organization, we provide unique and innovative manpower solutions tailored specifically to the manufacturing sector[cite: 36, 49]. We understand that in a modern production environment, efficiency and dependability are non-negotiable[cite: 36].</p>
+                <p>We pride ourselves on being your <strong>One-Stop Solution</strong>—handling everything from specialized floor staff to high-level compliance and payroll, so you can focus entirely on your core business production[cite: 36, 51].</p>
+            </div>
+            <div class="about-visual" style="position: relative;">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1470&auto=format&fit=crop" alt="Industrial Facility" style="width: 100%; border-radius: 30px; box-shadow: 30px 30px 0 var(--primary);">
+                <div style="position: absolute; bottom: -30px; left: -30px; background: var(--accent); color: white; padding: 40px; border-radius: 20px; text-align: center;">
+                    <h3 style="font-size: 2.5rem;">10+</h3>
+                    <p style="font-weight: 800; font-size: 0.8rem; text-transform: uppercase;">Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div style="text-align: center; margin-bottom: 80px;">
+            <span class="tagline">Our Expertise</span>
+            <h2 class="section-title">Comprehensive Manpower Solutions</h2>
+            <p style="max-width: 700px; margin: 0 auto; color: #666;">We provide a wide array of specialized services designed to keep your manufacturing unit running at peak efficiency around the clock[cite: 53].</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Technical Workforce</h3>
+                <p>Precision-driven staffing for technical roles that require specialized training and safety certifications.</p>
+                <ul class="feature-list">
+                    <li>Expert Machine Operators (CNC, Hydraulic, Manual) </li>
+                    <li>Certified Industrial Electricians </li>
+                    <li>Technical Floor Supervisors & Line Managers</li>
+                    <li>Quality Control & Inspection Personnel</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>General Production</h3>
+                <p>Robust manpower solutions for high-volume production cycles and heavy-duty industrial tasks.</p>
+                <ul class="feature-list">
+                    <li>Skilled Production Line Manpower </li>
+                    <li>Loading & Unloading Specialists </li>
+                    <li>Warehouse & Inventory Management Staff</li>
+                    <li>Packing, Labeling, and Sorting Teams</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <h3>Facility Management</h3>
+                <p>Comprehensive support staff to maintain a professional, safe, and hygienic work environment.</p>
+                <ul class="feature-list">
+                    <li>Industrial Housekeeping Teams </li>
+                    <li>Sanitation & Safety Compliance Workers</li>
+                    <li>Plant Maintenance & Support Staff [cite: 56]</li>
+                    <li>Office & Administrative Assistants</li>
+                </ul>
+            </div>
+
+            <div class="service-card" style="border-left-color: var(--accent);">
+                <h3>Customized Solutions</h3>
+                <p>We offer tailored workforce packages that adapt to your seasonal production peaks and valleys[cite: 36, 49].</p>
+                <ul class="feature-list">
+                    <li>24/7 Shift Rotation Management</li>
+                    <li>On-Site Project Supervisors</li>
+                    <li>Emergency Workforce Deployment</li>
+                    <li>Multi-Skill Trained Auxiliary Staff</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div style="padding: 0 10%;">
+        <div class="payroll-section">
+            <div class="payroll-text">
+                <span style="color: var(--accent); font-weight: 800; letter-spacing: 2px;">PREMIUM OUTSOURCING</span>
+                <h2>Third-Party Payroll Services</h2>
+                <p>Outsource your payroll to our experts for a hassle-free, legally compliant operation. We handle the entire employee lifecycle so they remain your greatest asset without the administrative burden[cite: 46, 47].</p>
+                <ul class="feature-list" style="color: white; margin-bottom: 40px;">
+                    <li style="color: white;">100% Statutory Compliance (EPF, ESI, etc.) [cite: 46]</li>
+                    <li style="color: white;">Full Attendance & Leave Documentation [cite: 47]</li>
+                    <li style="color: white;">Timely Salary Disbursement & Record Keeping [cite: 46, 47]</li>
+                    <li style="color: white;">Management of Government Dues & Filings [cite: 47]</li>
+                </ul>
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <h4>100%</h4>
+                        <p>Compliance</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>0%</h4>
+                        <p>Admin Stress</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <img src="https://images.unsplash.com/photo-1454165833767-027ff3d613e5?q=80&w=1470&auto=format&fit=crop" alt="Payroll Audit" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+            </div>
+        </div>
+    </div>
+
+    <section id="contact">
+        <div class="contact-container">
+            <div class="contact-sidebar">
+                <h3>Let's Build Your Workforce</h3>
+                <p style="margin-bottom: 40px; opacity: 0.8;">Visit our headquarters in GIDC Naroda or reach out directly to discuss your specific requirements.</p>
+                
+                <div class="contact-info-block">
+                    <label>Main Office Address</label>
+                    <p>F-8, Madhu milan estate, Phase-1, GIDC Naroda, Ahmedabad, Gujarat 382330 </p>
+                </div>
+                <div class="contact-info-block">
+                    <label>Direct Contact</label>
+                    <p>+91 7600270654 [cite: 38]</p>
+                </div>
+                <div class="contact-info-block">
+                    <label>Official Email</label>
+                    <p>info@prarambh.net [cite: 38]</p>
+                </div>
+                <div class="contact-info-block">
+                    <label>Business Hours</label>
+                    <p>Monday - Saturday: 09:00 AM - 07:00 PM</p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <span class="tagline">Inquiry Form</span>
+                <h2 class="section-title" style="font-size: 2.2rem; margin-bottom: 20px;">Request a Custom Quote</h2>
+                <p style="margin-bottom: 40px; color: #666;">Provide your details below and our service manager will contact you within 24 hours.</p>
+                <form>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <input type="text" placeholder="Your Name" class="form-input" required>
+                        <input type="text" placeholder="Company Name" class="form-input" required>
+                    </div>
+                    <input type="email" placeholder="Email Address" class="form-input" required>
+                    <input type="text" placeholder="Service Required (e.g. Machine Operators)" class="form-input">
+                    <textarea placeholder="Tell us about your estimated manpower requirements..." class="form-input" rows="6"></textarea>
+                    <button type="submit" class="submit-button">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div style="margin-bottom: 40px;">
+            <img src="001.png" alt="Footer Logo" style="height: 60px; filter: grayscale(100%) brightness(500%);">
+        </div>
+        <p>&copy; 2026 Prarambh Manpower Support. All Rights Reserved. | GIDC Naroda, Ahmedabad </p>
+        <p style="font-size: 0.8rem; margin-top: 20px; color: #444;">Leading Manpower Support for Manufacturing Units Since 2015[cite: 54, 55].</p>
+    </footer>
+
+    <a href="https://wa.me/917600270654" class="wa-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="45" alt="WhatsApp">
+    </a>
+
+</body>
+</html>
